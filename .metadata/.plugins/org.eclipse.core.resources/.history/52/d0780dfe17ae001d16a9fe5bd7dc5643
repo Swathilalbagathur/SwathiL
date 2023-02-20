@@ -1,0 +1,32 @@
+package Facebook_Creation;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver.SystemProperty;
+
+class Fcebooklogin {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver",
+				"C:\\Users\\KATHIR\\eclipse_Workspace\\Selenium_day1\\Driver\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.facebook.com/");
+		/*
+		 * driver.findElement(By.xpath("//input[@id='email']")).sendKeys(
+		 * "swathi99it@gmail.com");
+		 * driver.findElement(By.xpath("//input[@name='pass']")).sendKeys("112233");
+		 * driver.findElement(By.xpath("//a[@role='button']")).click();
+		 */
+		WebElement swati = driver.findElement(By.xpath("(//a[@role='button'])[2]"));
+		swati.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("(//input[@name='firstname'])")).sendKeys("swathi");
+		Thread.sleep(5000);
+		WebElement lastname = driver.findElement(By.xpath("(//input[@type='text'])[4]"));
+		lastname.sendKeys("kutti sorna");
+
+	}
+
+}
